@@ -1,0 +1,246 @@
+/* ===== Layout ===== */
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  font-family: system-ui, sans-serif;
+}
+body {
+  background: rgb(241, 229, 229);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #7f77dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ===== Stats ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  background: #f5f5f3;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.stat-num.completed {
+  color: #534ab7;
+}
+
+.stat-lbl {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ===== Form Card ===== */
+.form-card {
+  background: #fff;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.form-card input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-card input:focus {
+  border-color: #afa9ec;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #534ab7;
+  background: #eeedfe;
+  border: 0.5px solid #afa9ec;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.15s;
+}
+
+.add-btn:hover {
+  background: #cecbf6;
+}
+
+.add-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.filt-btn {
+  padding: 5px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  border: 0.5px solid #e0e0e0;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filt-btn.active {
+  background: #eeedfe;
+  border-color: #afa9ec;
+  color: #534ab7;
+  font-weight: 500;
+}
+
+/* ===== Task List ===== */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ===== Task Card ===== */
+.task-card {
+  background: #fff;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.task-card.done {
+  opacity: 0.6;
+}
+
+/* ===== Checkbox ===== */
+.check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.15s;
+}
+
+.check.checked {
+  background: #534ab7;
+  border: none;
+}
+
+/* ===== Task Body ===== */
+.task-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.task-card.done .task-title {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.task-desc {
+  font-size: 13px;
+  color: #888;
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* ===== Delete Button ===== */
+.del-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 0.5px solid #e0e0e0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.del-btn:hover {
+  background: #fcebeb;
+  border-color: #f09595;
+}
+
+/* ===== Empty State ===== */
+.empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #aaa;
+  font-size: 14px;
+}
