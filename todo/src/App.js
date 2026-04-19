@@ -15,7 +15,7 @@ function FilterBtn({ label, value, active, onClick }) {
 export default function App() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [Duration, setDuration] = useState("");
   const [filter, setFilter] = useState("all");
 
   const fetchTasks = async () => {
@@ -33,10 +33,10 @@ export default function App() {
     await fetch("http://localhost:5000/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, description }),
+      body: JSON.stringify({ title, Duration }),
     });
     setTitle("");
-    setDescription("");
+    setDuration("");
     fetchTasks();
   };
 
@@ -108,9 +108,9 @@ export default function App() {
         />
         <input
           id="desc-input"
-          placeholder="Description (optional)"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Duration (optional)"
+          value={Duration}
+          onChange={(e) => setDuration(e.target.value)}
           onKeyDown={(e) => handleKeyDown(e, addTask)}
         />
         <button className="add-btn" onClick={addTask}>
@@ -155,8 +155,8 @@ export default function App() {
               {/* Content */}
               <div className="task-body">
                 <div className="task-title">{task.title}</div>
-                {task.description && (
-                  <div className="task-desc">{task.description}</div>
+                {task.Duration && (
+                  <div className="task-desc">{task.Duration}</div>
                 )}
               </div>
 

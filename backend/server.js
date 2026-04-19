@@ -1,4 +1,7 @@
+require("dotenv").config();
 const express = require("express");
+
+
 const connectDB = require("./config/db");
 const Task = require("./models/Task");
 
@@ -7,8 +10,8 @@ const PORT = 5000;
 
 // Middleware
 app.use(express.json());
-
-// Connect DB
+console.log(process.env.MONGO_URI);
+// Connect DB       
 connectDB();
 const cors = require("cors");
 app.use(cors());
@@ -26,7 +29,7 @@ res.json(tasks);
 app.post("/tasks", async (req, res) => {
 const newTask = new Task({
 title: req.body.title,
-description: req.body.description,
+Duration: req.body.Duration,
 status: false
 });
 
@@ -64,7 +67,7 @@ const updatedTask = await Task.findByIdAndUpdate(
 req.params.id,
 {
 title: req.body.title,
-description: req.body.description
+Duration: req.body.Duration
 },
 { new: true }
 );

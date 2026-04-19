@@ -5,8 +5,8 @@ title: {
 type: String,
 required: true
 },
-description:{
-    type:String
+Duration:{
+    type: Date
 
 },
 status: {
